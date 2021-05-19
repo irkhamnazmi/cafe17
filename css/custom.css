@@ -1,0 +1,182 @@
+@font-face {
+    font-family: robotoRegular;
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: robotoMedium;
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: poppinsRegular;
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: poppinsLight;
+    src: url('../fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: poppinsMedium;
+    src: url('../fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: poppinsBold;
+    src: url('../fonts/Poppins-Bold.ttf');
+}
+
+
+.btn-primary {
+    /* background: #FF9900; */
+    background-color: black;
+    /* border: 0; */
+    padding: 15px 40px 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    font-family: poppinsRegular;
+}
+
+.btn-primary:hover {
+    background: rgb(219, 133, 4);
+    border: 0;
+}
+
+.btn-secondary {
+    background: none;
+    border: 1px solid #BCD0E5;
+    padding: 15px 40px 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #173A56;
+}
+
+.btn-secondary:hover {
+    background: none;
+    border: 1px solid rgb(159, 177, 197);
+    color: #173A56;
+}
+
+.herobwa h1 {
+    font-family: poppinsBold;
+    font-weight: 700;
+    color: black;
+   
+}
+
+.herobwa h2 {
+    font-family: poppinsMedium;
+    font-weight: 700;
+    color: black;
+   
+}
+
+
+.herobwa-black h1  {
+    font-family: poppinsBold;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+}
+
+.herobwa p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: #2F281E;
+
+}
+
+
+.navbar-nav .nav-item .nav-link {
+    color: #000;
+    font-family: robotoRegular;
+
+
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    color: #000;
+    font-family: robotoMedium;
+    text-decoration: underline;
+
+}
+
+.iconify {
+    font-size: 24px;
+
+}
+
+.navbar-nav .ml-auto .icon {
+    margin-left: 10px;
+}
+
+.herobwa-black {
+
+    background-color: #000;
+    color: white;
+    padding: 50px;
+   
+
+}
+
+.herobwa-white {
+
+    background-color: #fff;
+    color: black;
+    padding: 20px;
+
+}
+
+.link {
+    color: white;
+}
+
+.image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+
+}
+
+.carousel-indicators {
+    margin-top: 5px;
+    position: relative;
+}
+
+
+.carousel-indicators li {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #000;
+    position: relative;
+}
+
+.scrolling-wrapper{
+	overflow-x: auto;
+}
+
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+  }
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .btn-primary,
+    .btn-secondary {
+        margin-top: 10px;
+        margin-left: 0 !important;
+    }
+
+    
+
+}
