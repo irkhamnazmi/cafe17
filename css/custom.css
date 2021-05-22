@@ -168,6 +168,13 @@
   }
 
 
+  .modal-title{
+    font-family: poppinsMedium;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+  }
+
 
 @media only screen and (max-width: 768px) {
 
@@ -175,6 +182,14 @@
     .btn-secondary {
         margin-top: 10px;
         margin-left: 0 !important;
+    }
+
+    section#box-herobwa{
+        width: 90%;
+        height: 630px;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 30px;
     }
 
     

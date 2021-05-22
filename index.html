@@ -67,7 +67,8 @@
                         <span class="iconify" data-inline="false" data-icon="bi:cart"></span>
                     </li>
                     <li class="nav-item align-self-center">
-                        <a class="nav-link" href="#"><span class="iconify" data-inline="false"
+                        <a class="nav-link" type="button" data-toggle="modal" data-target="#signup"
+                            data-whatever="Pelanggan Baru"><span class="iconify" data-inline="false"
                                 data-icon="codicon:account"></span> Masuk atau Daftar</a>
                     </li>
 
@@ -79,7 +80,7 @@
         </div>
     </nav>
 
-    <section class="herobwa mt-5">
+    <section class="herobwa mt-5" id="box-herobwa">
         <div class="container">
             <div class="row">
                 <div class="col align-self-stretch">
@@ -123,11 +124,12 @@
                     </div>
 
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section class="herobwa-black mt-5">
+    <section class="herobwa-black mt-5"id="box-herobwa">
         <div class="container">
             <h1>Cerita Cafe 17</h1>
             <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
@@ -161,13 +163,13 @@
         </div>
     </section>
 
-    <section class="herobwa mt-5">
+    <section class="herobwa mt-5" id="box-herobwa">
         <div class="container">
             <h1 style="text-align: center;">Menu Terlaris</h1>
             <div class="d-flex flex-row">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card" style="width:350px; margin: 20px;">
+                    <div class="col mb-4">
+                        <div class="card" style="width:350px;">
                             <img class="card-img-top" alt="Card image" height="300" style="width:100%; padding: 10px;"
                                 src="images/menu1.png">
                             <div class="card-body">
@@ -183,8 +185,8 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
-                        <div class="card" style="width:350px; margin: 20px;">
+                    <div class="col mb-4">
+                        <div class="card" style="width:350px;">
                             <img class="card-img-top" alt="Card image" style="width:100%; padding: 10px;" height="300"
                                 src="images/ayam_geprek_keju.png">
                             <div class="card-body">
@@ -200,8 +202,8 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
-                        <div class="card" style="width:350px; margin: 20px;">
+                    <div class="col mb-4">
+                        <div class="card" style="width:350px;">
                             <img class="card-img-top" alt="Card image" height="300" style="width:100%; padding: 10px;"
                                 src="images/nasi+ayam penyet+terong goreng+kol-kubis(geprek).png">
                             <div class="card-body">
@@ -221,17 +223,7 @@
         </div>
     </section>
 
-
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-
-    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
-
-</body>
-
+<!--Footer-->
 <footer>
     <section class="herobwa-black mt-5">
         <div class="container">
@@ -296,4 +288,208 @@
 
 </footer>
 
+
+    
+
+    <!-- Modal Dialog -->
+    <div class="modal fade" id="signup" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content" id="signup">
+
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLabel">Pelanggan Baru</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Nama</label>
+                                        <input type="text" class="form-control" >
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" >
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>No.WhatsApp</label>
+                                        <input type="text" class="form-control" >
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col">
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Sandi</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Ulang Sandi</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            
+                        </div>
+
+                        <div class="row" style="margin: 10px;">
+
+                            <div class="col">
+                                <label>Alamat Lengkap</label>
+                                <textarea type="text" class="form-control"></textarea>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-target="#login" data-dismiss="modal" data-whatever="Silahkan Masuk">Masuk</button>
+                    <button type="button" class="btn btn-primary">Daftar</button>
+                </div>
+            </div>
+
+            <div class="modal-content" data-target="lognm">
+
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLabel">Pelanggan Baru</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Nama</label>
+                                        <input type="text" class="form-control" >
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" >
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>No.WhatsApp</label>
+                                        <input type="text" class="form-control" >
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col">
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Sandi</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Ulang Sandi</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            
+                        </div>
+
+                        <div class="row" style="margin: 10px;">
+
+                            <div class="col">
+                                <label>Alamat Lengkap</label>
+                                <textarea type="text" class="form-control"></textarea>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-target="#login" data-dismiss="modal" data-whatever="Silahkan Masuk">Masuk</button>
+                    <button type="button" class="btn btn-primary">Daftar</button>
+                </div>
+            </div>
+
+         
+            
+           
+        </div>
+    
+    </div>
+
+   
+
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+
+    <script>
+        $('#signup').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+
+             modal = $(this)
+            //  modal.find('.modal-title').text(recipient)
+        })
+
+        
+    </script>
+</body>
 </html>
