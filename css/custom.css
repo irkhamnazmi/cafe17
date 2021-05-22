@@ -28,6 +28,32 @@
     src: url('../fonts/Poppins-Bold.ttf');
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+body{
+    padding-bottom: 58px;
+    min-height: 100vh;
+}
+
+main{
+    margin: 0 auto;
+    padding: 50px 0px;
+
+}
+
+  footer {
+    clear: both;
+    position: relative;
+    width: 100%;
+    margin-top: -100px;
+   
+}
 
 .btn-primary {
     /* background: #FF9900; */
@@ -175,15 +201,6 @@
     text-align: center;
   }
 
-  .footer{
-    width: 100%;
-    height: 50px;
-   
-    line-height: 50px;
-    color: #fff;
-    position: absolute;
-    bottom: 0px;
-}
 
 
 @media only screen and (max-width: 768px) {
