@@ -68,7 +68,8 @@
                         <span class="iconify" data-inline="false" data-icon="bi:cart"></span>
                     </li>
                     <li class="nav-item align-self-center">
-                        <a class="nav-link" href="#"><span class="iconify" data-inline="false"
+                        <a class="nav-link" type="button" data-toggle="modal" data-target="#formModal" onclick="login()" 
+                            data-whatever="Pelanggan Baru"><span class="iconify" data-inline="false"
                                 data-icon="codicon:account"></span> Masuk atau Daftar</a>
                     </li>
 
@@ -202,14 +203,155 @@
 
     </footer>
 
+      <!-- Modal Dialog -->
+      <div class="modal fade" id="formModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+        
+           
+            <div class="modal-content" id="signup">
+
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLabel">Pelanggan Baru</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+         
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Nama</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>No.WhatsApp</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col">
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Sandi</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Ulang Sandi</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="row" style="margin: 10px;">
+
+                            <div class="col">
+                                <label>Alamat Lengkap</label>
+                                <textarea type="text" class="form-control"></textarea>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"  onclick="login()"
+                        >Masuk</button>
+                    <button type="button" class="btn btn-primary">Daftar</button>
+                </div>
+            </div>
+
+            <div class="modal-content" id="login">
+
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLabel">Silahkan Masuk</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+         
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin: 10px;">
+
+                                    <div class="col">
+                                        <label>Sandi</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                           
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"  onclick="signup()" 
+                        >Daftar</button>
+                    <button type="button" class="btn btn-primary">Masuk</button>
+                </div>
+            </div>
+         
+        </div>
+
+    </div>
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 
-    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
+
+<script src="js/main.js"></script>
 </body>
 
 

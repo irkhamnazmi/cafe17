@@ -41,8 +41,11 @@ body{
     min-height: 100vh;
 }
 
+
+
 main{
-    margin: 0 auto;
+  
+    margin-bottom: 20%;
     padding: 50px 0px;
 
 }
@@ -85,6 +88,7 @@ main{
     border: 1px solid rgb(159, 177, 197);
     color: #173A56;
 }
+
 
 .herobwa h1 {
     font-family: poppinsBold;
