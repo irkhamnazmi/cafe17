@@ -39,6 +39,7 @@ html, body{
 body{
     padding-bottom: 58px;
     min-height: 100vh;
+    
 }
 
 
@@ -163,6 +164,13 @@ main{
 .link {
     color: white;
 }
+
+.link-b{
+    color: black;
+}
+
+
+
 
 .image {
     position: relative;

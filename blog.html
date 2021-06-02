@@ -17,7 +17,7 @@
 
     <nav class="navbar py-4 navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <!-- <img src="images/cafe17.svg" width="187" alt=""> -->
                 <svg width="556" viewBox="0 0 556 79" fill="none" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -65,12 +65,13 @@
                         <span class="iconify" data-inline="false" data-icon="zmdi:search"></span>
                     </li>
                     <li class="nav-item align-self-center">
-                        <span class="iconify" data-inline="false" data-icon="bi:cart"></span>
+                        <a class="nav-link" href="cart.html"> <span class="iconify" data-inline="false"
+                                data-icon="bi:cart"></span></a>
                     </li>
                     <li class="nav-item align-self-center">
-                        <a class="nav-link" type="button" data-toggle="modal" data-target="#formModal" onclick="login()" 
+                        <a class="nav-link" type="button" data-toggle="modal" data-target="#formModal" onclick="login()"
                             data-whatever="Pelanggan Baru"><span class="iconify" data-inline="false"
-                                data-icon="codicon:account"></span> Masuk atau Daftar</a>
+                                data-icon="codicon:account"></span> Masuk / Daftar</a>
                     </li>
 
                     <!-- <a class="btn px-4 btn-secondary ml-5" href="#" role="button">Sign In</a>
@@ -82,6 +83,9 @@
     </nav>
 
     <main>
+  
+
+
         <section class="herobwa mt-5">
             <div class="container">
                 <h1>Berbagi Cerita</h1>
@@ -95,16 +99,15 @@
                             <div class="card" style="width:350px; border: none;">
                                 <img class="card-img-top" alt="Card image" height="300"
                                     style="width:100%; padding: 10px;"
-                                    src="images/nasi+ayam penyet+terong goreng+kol-kubis(geprek).png">
+                                    src="images/mlegend.png">
                                 <div class="card-body">
-                                    <h4 class="card-text">nasi+ayam penyet+terong goreng+kol-kubis(geprek)</h4>
-                                    <h5 class="card-title">Rp 0,-</h5>
-                                    <h6><span class="iconify" data-inline="false" data-icon="bi:cart-check"
-                                            style="font-size: 24px;"></span> 0</h6>
-                                    <div class="col-md-12 text-center">
-                                        <button type="button" class="btn btn-primary">Pesan</button>
-
-                                    </div>
+                                    <h2 class="card-title"><u>Turnament Mobile Legend</u></h2>
+                                    <h5 class="card-text"> Heyooo don't miss it, come to join our tourney of mobile
+                                        legends..
+                                        Ayo uji squad kalian, jadikan team kalian yang terbaik dan dapatkan hadiah
+                                        jutaan rupiah.</h5>
+                                        <a type="button" class="link-b" href="viewblog.html"><h5><u>Baca selengkapnya...</u></h5></a>
+                                    <h5 class="card-text">30 April 2020</h6>
                                 </div>
                             </div>
                         </div>
@@ -115,16 +118,12 @@
                             <div class="card" style="width:350px; border: none;">
                                 <img class="card-img-top" alt="Card image" height="300"
                                     style="width:100%; padding: 10px;"
-                                    src="images/nasi+ayam penyet+terong goreng+kol-kubis(geprek).png">
+                                    src="images/berbagi.png">
                                 <div class="card-body">
-                                    <h4 class="card-text">nasi+ayam penyet+terong goreng+kol-kubis(geprek)</h4>
-                                    <h5 class="card-title">Rp 0,-</h5>
-                                    <h6><span class="iconify" data-inline="false" data-icon="bi:cart-check"
-                                            style="font-size: 24px;"></span> 0</h6>
-                                    <div class="col-md-12 text-center">
-                                        <button type="button" class="btn btn-primary">Pesan</button>
-
-                                    </div>
+                                    <h2 class="card-title"><u>Berbagi Bersama</u></h2>
+                                    <h5 class="card-text"> Terimakasih kepada PT. Berkah Sentosa Perkasa dan mas WiraNagara sudah mempercayakan cafe17 untuk menyalurkan niat baik anda.</h5>
+                                    <a type="button" class="link-b" href="viewblog.html"><h5><u>Baca selengkapnya...</u></h5></a>
+                                    <h5 class="card-text">30 April 2020</h6>
                                 </div>
                             </div>
                         </div>
@@ -150,13 +149,14 @@
                         <div class="card" style="background-color: transparent; border: transparent;">
 
                             <div class="col d-flex justify-content-center">
-                                <span class="iconify" data-inline="false" data-icon="akar-icons:instagram-fill"
+                               <span class="iconify" data-inline="false" data-icon="akar-icons:instagram-fill"
                                     style="color: #ffffff; font-size: 36px;"></span>
                             </div>
 
 
                             <div class="card-body" style="text-align: center;">
-                                <p>@cafe17.purwokerto</p>
+                                <a class="link" href="https://www.instagram.com/cafe17.purwokerto/">@cafe17.purwokerto</a>
+                               
                             </div>
                         </div>
                     </div>
@@ -171,7 +171,7 @@
 
 
                             <div class="card-body" style="text-align: center;">
-                                <p>@cafe17.purwokerto</p>
+                                <a class="link" href="https://www.facebook.com/cafe17.purwokerto/">@cafe17.purwokerto</a>
                             </div>
                         </div>
                     </div>
@@ -187,12 +187,11 @@
 
 
                             <div class="card-body" style="text-align: center;">
-                                <p>+62 857-2500-3400</p>
+                                <a class="link" href="https://wa.me/6285725003400">+62 857-2500-3400</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <br>
 
                 <p style="text-align: center;">© 2021 Cafe 17 Purwokerto</p>
@@ -203,11 +202,11 @@
 
     </footer>
 
-      <!-- Modal Dialog -->
-      <div class="modal fade" id="formModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Dialog -->
+    <div class="modal fade" id="formModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
-        
-           
+
+
             <div class="modal-content" id="signup">
 
                 <div class="modal-header">
@@ -216,7 +215,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-         
+
                 <div class="modal-body">
                     <form>
                         <div class="row">
@@ -287,8 +286,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"  onclick="login()"
-                        >Masuk</button>
+                    <button type="button" class="btn btn-secondary" onclick="login()">Masuk</button>
                     <button type="button" class="btn btn-primary">Daftar</button>
                 </div>
             </div>
@@ -301,12 +299,12 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-         
+
                 <div class="modal-body">
                     <form>
                         <div class="row">
                             <div class="col">
-                                
+
                                 <div class="row" style="margin: 10px;">
 
                                     <div class="col">
@@ -327,16 +325,15 @@
 
                             </div>
 
-                           
+
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"  onclick="signup()" 
-                        >Daftar</button>
+                    <button type="button" class="btn btn-secondary" onclick="signup()">Daftar</button>
                     <button type="button" class="btn btn-primary">Masuk</button>
                 </div>
             </div>
-         
+
         </div>
 
     </div>
@@ -345,13 +342,13 @@
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
 
-<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
 
-<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 
