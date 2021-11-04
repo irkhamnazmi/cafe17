@@ -87,7 +87,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <button type="submit" class="btn btn-primary col">Tambahkan ke Keranjang</button>
+                                                <button <?= (empty($_SESSION['userID'])) ? 'type="button" data-toggle="modal" data-target="#formModal" onclick="login()"' : 'type="submit"'; ?> class="btn btn-primary col">Tambahkan ke Keranjang</button>
                                             </div>
                                         </div>
                                     </div>

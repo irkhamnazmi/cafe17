@@ -8,7 +8,22 @@ class Menu extends Controller
     {
         $data = [
             'page' => $this->page_name,
+            'category'=> 'Semua Kategori',
             'row' => $this->model('Menu_model')->getAllRow()
+        
+        ];
+
+        $this->view('template/header', $data);
+        $this->view('template/navbar', $data);
+        $this->view('menu/index', $data);
+        $this->view('template/footer', $data);
+    }
+    public function filter($category)
+    {
+        $data = [
+            'page' => $this->page_name,
+            'category' => $category,
+            'row' => $this->model('Menu_model')->getRowByCategory($category)
         
         ];
 

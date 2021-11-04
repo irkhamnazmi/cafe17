@@ -37,4 +37,11 @@ class Menu_model{
         $this->db->bind('menu_name',$key['menu_name']);
         return $this->db->resultSet();
     }
+    public function getRowByCategory($category)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE menu_category = :menu_category');
+        $this->db->bind('menu_category',$category);
+     
+        return $this->db->resultSet();
+    }
 }

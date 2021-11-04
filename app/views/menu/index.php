@@ -9,10 +9,10 @@
                                 Kategori
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Semua Kategori</a>
-                                <a class="dropdown-item" href="#">Makanan</a>
-                                <a class="dropdown-item" href="#">Minuman</a>
-                                <a class="dropdown-item" href="#">Menu Terlaris</a>
+                                <a class="dropdown-item" href="<?= BASEURL;?>/menu/">Semua Kategori</a>
+                                <a class="dropdown-item" href="<?= BASEURL;?>/menu/filter/Makanan">Makanan</a>
+                                <a class="dropdown-item" href="<?= BASEURL;?>/menu/filter/Minuman">Minuman</a>
+                                <a class="dropdown-item" href="<?= BASEURL;?>/menu">Menu Terlaris</a>
                             </div>
                         </div>
 
@@ -27,7 +27,7 @@
             <div class="container">
 
 
-                <h1>Semua Kategori</h1>
+                <h1><?= $data['category'];?></h1>
                 <div class="d-flex flex-row">
                     <div class="row">
                         <?php
