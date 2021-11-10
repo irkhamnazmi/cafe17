@@ -11,17 +11,11 @@
       var validation = Array.prototype.filter.call(forms, function(form) {
         form.addEventListener('submit', function(event) {
          
-            if (isEmpty(userId)) {
-                event.preventDefault();
-                event.stopPropagation();
-                login();
-               
-             }  
-          
-                // form.classList.add('was-validated');
-        
-         
-       
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');      
         }, false);
       });
     }, false);
