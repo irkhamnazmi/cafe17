@@ -1,13 +1,13 @@
 
 function login() {
-    $('#signup').css('display','none');
+    $('#register').css('display','none');
     $('#login').css('display','block');
     // document.getElementById("signup").style.display = "none"
     // document.getElementById("login").style.display = "block"
   }
 
-  function signup() {
-    $('#signup').css('display','block');
+  function register() {
+    $('#register').css('display','block');
     $('#login').css('display','none');
     // document.getElementById("login").style.display = "none"
     // document.getElementById("signup").style.display = "block"
@@ -24,6 +24,24 @@ function login() {
 //     //  modal.find('.modal-title').text(recipient)
 // })
 
+
+function password() {
+  var x = document.getElementById("user_password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+function passwordRepeat() {
+  var x = document.getElementById("user_password_repeat");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 
 
 

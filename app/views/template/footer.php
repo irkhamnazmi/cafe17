@@ -158,7 +158,7 @@
                                     
 
                                     <label for="user_password_repeat">Ulang Sandi</label>
-                                        <input type="password" class="form-control" require id="user_password_repeat">
+                                        <input type="password" class="form-control" required id="user_password_repeat">
                                         <div class="invalid-feedback">
                                                 Ulang Sandi Anda Belum Diisi
                                         </div>
@@ -167,8 +167,8 @@
                                
                                 <div class="row" style="margin-left: 30px;">
                                     
-                                        <input type="checkbox" class="form-check-input" onclick="passwordRepeat()" for="exampleCheck"> 
-                                        <label class="form-check-label" for="exampleCheck2">Tampilkan Sandi</label>
+                                        <input type="checkbox" class="form-check-input" onclick="passwordRepeat()" for="exampleCheck2"> 
+                                        <label class="form-check-label" for="exampleCheck2">Tampilkan Ulang Sandi</label>
                                 
                                 </div>
 
@@ -263,15 +263,15 @@
 
    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script> -->
 
    <script type="text/javascript" src="https://unpkg.com/@popperjs/core@2"></script>
    <script src="<?= BASEURL; ?>/js/main.js"></script>
 
    <!-- BASEURL FOR JS -->
-
+   <script src="<?= BASEURL; ?>/js/jquery.js"></script>
    <script src="<?= BASEURL; ?>/js/formValidate.js"></script>
 
 

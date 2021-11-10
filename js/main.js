@@ -26,23 +26,7 @@ function login() {
 //     //  modal.find('.modal-title').text(recipient)
 // })
 
-function password() {
-  var x = document.getElementById("user_password");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
 
-function passwordRepeat() {
-  var x = document.getElementById("user_password_repeat");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
 
 
 
