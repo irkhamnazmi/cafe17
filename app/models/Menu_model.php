@@ -44,4 +44,11 @@ class Menu_model{
      
         return $this->db->resultSet();
     }
+
+    public function getRowBySearch($key)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE menu_name LIKE :menu_name GROUP BY menu_id');
+        $this->db->bind('menu_name', "%$key%");
+        return $this->db->resultSet();
+    }
 }

@@ -75,6 +75,7 @@ main{
     border: 0;
 }
 
+
 .btn-secondary {
     background: none;
     border: 1px solid #BCD0E5;
@@ -89,6 +90,36 @@ main{
     border: 1px solid rgb(159, 177, 197);
     color: #173A56;
 }
+
+.btn-warning {
+    /* background: #FF9900; */
+    background-color: orange;
+    /* border: 0; */
+    padding: 15px 40px 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    font-family: poppinsRegular;
+}
+
+.btn-primary:hover {
+    background: rgb(219, 133, 4);
+    border: 0;
+}
+
+.btn-danger {
+    border: 1px solid white;
+    padding: 15px 40px 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+}
+
+.btn-danger:hover {
+    background: rgb(219, 133, 4);
+    border: 0;
+}
+
 
 
 .herobwa h1 {

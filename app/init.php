@@ -6,4 +6,5 @@ require_once 'core/Database.php';
 require 'core/Flasher.php';
 require_once 'config/config.php'; 
 
+
 ?>

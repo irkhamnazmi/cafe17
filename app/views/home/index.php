@@ -141,7 +141,7 @@
                             <div class="card-body">
                                 <h4 class="card-text"><?= $row['menu_name'];?></h4>
                                 <h5 class="card-title">Rp <?= $row['menu_price'];?>,-</h5>
-                                <h6><span class="iconify" data-inline="false" data-icon="bi:cart-check" style="font-size: 24px;"></span> 0</h6>
+                                <!-- <h6><span class="iconify" data-inline="false" data-icon="bi:cart-check" style="font-size: 24px;"></span> 0</h6> -->
                                 <div class="col-md-12 text-center">
                                     <button type="button" class="btn btn-primary" onclick="location.href='<?= BASEURL; ?>/menu/order/<?= $title = str_replace(' ', '-', $row['menu_id'].' '.$row['menu_name']); ?>'">Pesan</button>
                                 </div>
