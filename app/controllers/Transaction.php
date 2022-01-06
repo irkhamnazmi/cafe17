@@ -172,7 +172,8 @@ class transaction extends Controller
                 
             ];
 
-            echo json_encode($this->model('Transaction_model')->postUpdateRowByBoxed($data));
+            $this->model('Transaction_model')->postUpdateRowByBoxed($data);
+            echo json_encode('Success');
     }
 
     public function transaction_detail($transaction){

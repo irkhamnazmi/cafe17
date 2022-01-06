@@ -720,7 +720,7 @@ function deleteOnCart(id) {
 
 function boxed(id) {
 
-  window.location.href=baseurl+'/transaction/payment';    
+     
   $.ajax({
     async: true,
     url: baseurl + '/transaction/boxed',
@@ -729,12 +729,20 @@ function boxed(id) {
     },
     method: 'POST',
     dataType: 'json',
+    beforeSend: function() {
+      toastr.success('Pesanan ini telah dikemas');
+    },
     success: function (data) {
-      console.log(data);
+      setTimeout(function() {
+        console.log(data);
+        window.location.href=baseurl+'/transaction/payment';
+      }, 2000);
       
 
     }
   });
+
+   
 
 
 }

@@ -12,7 +12,7 @@
                                 <a class="dropdown-item" href="<?= BASEURL;?>/menu">Semua Kategori</a>
                                 <a class="dropdown-item" href="<?= BASEURL;?>/menu/filter/Makanan">Makanan</a>
                                 <a class="dropdown-item" href="<?= BASEURL;?>/menu/filter/Minuman">Minuman</a>
-                                <a class="dropdown-item" href="<?= BASEURL;?>/menu">Menu Terlaris</a>
+                                <!-- <a class="dropdown-item" href="<?= BASEURL;?>/menu">Menu Terlaris</a> -->
                             </div>
                         </div>
 
