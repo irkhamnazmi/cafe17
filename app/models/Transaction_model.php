@@ -24,6 +24,7 @@ class Transaction_model
       
          return $this->db->single();
     }
+  
     public function getSingleRowById($data)
     {
         $this->db->query('SELECT * FROM ' . $this->view . ' WHERE user_id = :user_id AND transaction_status = :transaction_status ');
@@ -66,6 +67,16 @@ class Transaction_model
         $this->db->bind('user_id',$id);
         return $this->db->resultSet();
     }
+
+    public function getRowByTransactionStatus($data)
+    {
+        $this->db->query('SELECT * FROM ' . $this->view_payment . ' WHERE user_id = :user_id AND transaction_status = :transaction_status ');
+        $this->db->bind('user_id',$data['user_id']);
+        $this->db->bind('transaction_status',$data['transaction_status']);
+      
+         return $this->db->resultSet();
+    }
+
     public function getDetailRowById($id)
     {
         $this->db->query('SELECT * FROM '. $this->view. ' WHERE transaction_detail_id = :transaction_detail_id ');

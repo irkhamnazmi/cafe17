@@ -5,14 +5,14 @@
                 <div class="col align-self-stretch">
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Kategori
+                            Status Transaksi
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/menu">Semua Transaksi</a>
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/menu/filter/Menunggu Konfirmasi">Menunggu Konfirmasi</a>
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/menu/filter/Menunggu Pembayaran">Menunggu Pembayaran</a>
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/menu/filter/Sedang Proses">Sedang Proses</a>
-                            <a class="dropdown-item" href="<?= BASEURL; ?>/menu/filter/Minuman">Lunas</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/transaction/payment/Semua-Transaksi">Semua Transaksi</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/transaction/payment/Menunggu-Konfirmasi">Menunggu Konfirmasi</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/transaction/payment/Menunggu-Pembayaran">Menunggu Pembayaran</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/transaction/payment/Sedang-Proses">Sedang Proses</a>
+                            <a class="dropdown-item" href="<?= BASEURL; ?>/transaction/payment/lunas">Lunas</a>
 
                         </div>
                     </div>
@@ -28,7 +28,7 @@
         <div class="container">
 
 
-            <h1><?= $data['category']; ?></h1>
+            <h1><?= $data['status']; ?></h1>
             <div class="d-flex flex-row">
                 <div class="row">
                     <?php

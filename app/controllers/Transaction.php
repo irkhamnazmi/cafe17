@@ -34,26 +34,57 @@ class transaction extends Controller
         echo "<script>$('#detail').load(baseurl + '/transaction/detaildata');</script>";
     }
 
-    public function payment()
+    public function payment($id ='')
     {
+     
+    
+
        $user = $_SESSION['user_account']['id'];
        
        if(empty($user)){
           
            header('Location: ' . BASEURL);
        }
+
+       if(empty($id)){
+        header('Location: ' . BASEURL . '/transaction/payment/Semua-Transaksi'); 
+       }
+
+       $status = str_replace('-', ' ', $id);
+
+      
+       
+       if($status == 'Semua Transaksi'){
+        $row = $this->model('Transaction_model')->getRowByTransaction($user);  
+       }   
+        else{
+         
+        $filter = [
+            'transaction_status'=>$status,
+            'user_id'=>$user
+        ];   
+        $x = $this->model('Transaction_model')->getRowByTransactionStatus($filter);
+       
+        if(empty($x)){
+           $row = ''; 
+        } else{
+           $row = $x;  
+        }
+       }
+
+      
      
        $data = [
-            'category' => 'Semua Transaksi',
-            'row' => $this->model('Transaction_model')->getRowByTransaction($user) 
-         ];
+            'status' => $status,
+            'row' => $row
+        ];
 
         $this->view('template/header', $data);
         $this->view('template/navbar', $data);
         $this->view('transaction/payment', $data);
         $this->view('template/footer', $data);
 
-        // echo "<script>$('#detail').load(baseurl + '/transaction/detaildata');</script>";
+        echo "<script>$('#detail').load(baseurl + '/transaction/detaildata');</script>";
     }
 
     public function filter($category)
