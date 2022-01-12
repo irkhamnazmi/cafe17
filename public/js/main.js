@@ -127,21 +127,41 @@ function paymentOnTransaction(id){
   $('#formModal').modal();
   $('#search').css('display','none');
 
+
+
   
 }
 
-function ewallet(){
-  $('#ewallet').css('display','block');
-  $('#cod').css('display','none');
-  console.log('ewallet');
-  $('#method').html('ewallet');
+function changeMethod(){
+  var method = $('#transaction_method').val();
+  
+  console.log(method);
+
+  if(method == 'Dompet Digital'){
+    $('#ewallet').css('display','block');
+    $('#cod').css('display','none');
+    console.log('ewallet');
+    $('#method').html('ewallet');
+  }else{
+    $('#ewallet').css('display','none');
+    $('#cod').css('display','block');
+    console.log('cod');
+    $('#method').html('cod');
+  }
 }
-function cod(){
-  $('#ewallet').css('display','none');
-  $('#cod').css('display','block');
-  console.log('cod');
-  $('#method').html('cod');
-}
+
+// function ewallet(){
+//   $('#ewallet').css('display','block');
+//   $('#cod').css('display','none');
+//   console.log('ewallet');
+//   $('#method').html('ewallet');
+// }
+// function cod(){
+//   $('#ewallet').css('display','none');
+//   $('#cod').css('display','block');
+//   console.log('cod');
+//   $('#method').html('cod');
+// }
 
 
 
@@ -185,10 +205,9 @@ function passwordRepeat() {
     var validation = Array.prototype.filter.call(forms, function (form) {
       form.addEventListener('submit', function (event) {
         var check = $('#user_action').html();
-        if (check == 'register') {
 
-          // const id = $(this).data('id');
-
+        switch(check){
+          case 'register':
           var name = $('#user_name').val();
           var email = $('#user_email').val();
           var phoneNumber = $('#user_phone_number').val();
@@ -305,80 +324,76 @@ function passwordRepeat() {
 
           }
 
-
-
-
-
-        }
-        if (check == 'login') {
-          var email = $('#user_email_login').val();
-          var password = $('#user_password_login').val();
-
-          if (email == '') {
-            event.preventDefault();
-            event.stopPropagation();
-            $('#user_email_login').removeClass("form-control").addClass("form-control is-invalid");
-            $('#email-login-error').text('Email Anda Belum diisi');
-          } else if (!validateEmail(email)) {
-            event.preventDefault();
-            event.stopPropagation();
-            $('#user_email_login').removeClass("form-control").addClass("form-control is-invalid");
-            $('#email-login-error').text('Email Anda Tidak Valid');
-          }
-          if (password == '') {
-            event.preventDefault();
-            event.stopPropagation();
-            $('#user_password_login').removeClass("form-control").addClass("form-control is-invalid");
-            $('#password-login-error').text('Password Anda Belum diisi');
-          } else {
-            event.preventDefault();
-            event.stopPropagation();
-
-
-            $.ajax({
-              url: baseurl + '/account/validation',
-              data: {
-                user_email: email,
-                user_password: password
-              },
-              method: 'POST',
-              dataType: 'json',
-              success: function (valid) {
-
-                if (valid == '') {
-                  $('#user_email_login').removeClass("form-control").addClass("form-control is-invalid");
-                  $('#user_password_login').removeClass("form-control").addClass("form-control is-invalid");
-                  $('#email-login-error').text('Mungkin email anda kurang tepat');
-                  $('#password-login-error').text(' Atau Mungkin password anda kurang tepat');
-                } else {
-                  $.ajax({
-                    url: baseurl + '/account/login',
-                    data: {
-                      user_id: valid.user_id,
-                      user_name: valid.user_name
-                    },
-                    method: 'POST',
-                    success: function (data) {
-
-                      window.location.href = baseurl;
-
-                      console.log(data);
-                    }
-                  });
-
+            break;
+            case 'login':
+            var email = $('#user_email_login').val();
+            var password = $('#user_password_login').val();
+  
+            if (email == '') {
+              event.preventDefault();
+              event.stopPropagation();
+              $('#user_email_login').removeClass("form-control").addClass("form-control is-invalid");
+              $('#email-login-error').text('Email Anda Belum diisi');
+            } else if (!validateEmail(email)) {
+              event.preventDefault();
+              event.stopPropagation();
+              $('#user_email_login').removeClass("form-control").addClass("form-control is-invalid");
+              $('#email-login-error').text('Email Anda Tidak Valid');
+            }
+            if (password == '') {
+              event.preventDefault();
+              event.stopPropagation();
+              $('#user_password_login').removeClass("form-control").addClass("form-control is-invalid");
+              $('#password-login-error').text('Password Anda Belum diisi');
+            } else {
+              event.preventDefault();
+              event.stopPropagation();
+  
+  
+              $.ajax({
+                url: baseurl + '/account/validation',
+                data: {
+                  user_email: email,
+                  user_password: password
+                },
+                method: 'POST',
+                dataType: 'json',
+                success: function (valid) {
+  
+                  if (valid == '') {
+                    $('#user_email_login').removeClass("form-control").addClass("form-control is-invalid");
+                    $('#user_password_login').removeClass("form-control").addClass("form-control is-invalid");
+                    $('#email-login-error').text('Mungkin email anda kurang tepat');
+                    $('#password-login-error').text(' Atau Mungkin password anda kurang tepat');
+                  } else {
+                    $.ajax({
+                      url: baseurl + '/account/login',
+                      data: {
+                        user_id: valid.user_id,
+                        user_name: valid.user_name
+                      },
+                      method: 'POST',
+                      success: function (data) {
+  
+                        window.location.href = baseurl;
+  
+                        console.log(data);
+                      }
+                    });
+  
+                  }
+  
+                  console.log(valid);
                 }
+              });
+  
+  
+            }
+  
+            break;
+            case 'forgot': 
 
-                console.log(valid);
-              }
-            });
-
-
-          }
-
-
-        }
-        if (check == 'forgot') {
-          var email = $('#user_email_forgot').val();
+            var email = $('#user_email_forgot').val();
           if (email == '') {
             event.preventDefault();
             event.stopPropagation();
@@ -442,10 +457,8 @@ function passwordRepeat() {
 
 
           }
-        }
-
-        if(check == 'account'){
-         
+              break;
+              case 'account':
           var name = $('#user_name').val();
           var email = $('#user_email').val();
           var phoneNumber = $('#user_phone_number').val();
@@ -530,12 +543,98 @@ function passwordRepeat() {
 
 
           }
+                break;
+              case 'payment':
+                event.preventDefault();
+                event.stopPropagation();
+                var method = $('#method').html();
+                if(method == 'Dompet Digital'){
+                  var image = $('#transaction_image').val();
+                  if(image == ''){
+                  
+                    $('#transaction_image').removeClass("form-control").addClass("form-control is-invalid");
+                  }else{
+
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    $.ajax({
+                      url: baseurl + '/transaction/payment_process',
+                      data: {
+                        
+                        transaction_id: transaction_id,
+                        transaction_method: transaction_method,
+                        transaction_image: transaction_image
+                      },
+                      method: 'POST',
+                      dataType: 'json',
+                      success: function (data) {
+                        console.log(data);
+                        window.location.href = baseurl+'/transaction/payment';
+                        
+                       
+                      }
+                    });  
+        
+
+                  } 
+
+
+                }
+                else{
+                  
+                  $.ajax({
+                    url: baseurl + '/transaction/payment_update',
+                    data: {
+                      
+                      user: name,
+                      user_email: email,
+                      user_phone_number: phoneNumber,
+                      user_address: address,
+                      user_password: password
+                    },
+                    method: 'POST',
+                    dataType: 'json',
+                    success: function (data) {
+                      console.log(data);
+                      window.location.href = baseurl+'/account/';
+      
+                     
+                    }
+                  });  
+                }
+
+                break;
+
         }
 
-        if(check == 'payment'){
-          var method = $('#method').html();   
+        // if (check == 'register') {
+
+        //   // const id = $(this).data('id');
+
           
-        }
+
+
+
+
+        // }
+        // if (check == 'login') {
+         
+
+        // }
+        // if (check == 'forgot') {
+          
+        // }
+
+        // if(check == 'account'){
+         
+          
+        // }
+
+        // if(check == 'payment'){
+         
+          
+        // }
 
       }, false);
     });

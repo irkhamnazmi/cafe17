@@ -180,6 +180,26 @@ class Transaction_model
         return $this->db->rowCount();
     }
 
+    public function postUpdateRowByPayment($data)
+    {
+        $query ="UPDATE ". $this->table ."
+                SET  transaction_method = :transaction_method,
+                     transaction_image = :transaction_image,
+                     transaction_status = 'Sedang Proses';
+                WHERE transaction_id = :transaction_id";
+
+        $this->db->query($query);
+        $this->db->bind('transaction_id',$data['transaction_id']);
+        $this->db->bind('transaction_image',$data['transaction_image']);
+        $this->db->bind('transaction_status',$data['transaction_status']);
+        $this->db->bind('transaction_method',$data['transaction_method']);
+       
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
     public function postDeleteRowById($id){
         $query ="DELETE FROM ". $this->table ."
                 WHERE transaction_id = :transaction_id";

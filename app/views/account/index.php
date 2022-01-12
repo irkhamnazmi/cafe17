@@ -110,8 +110,9 @@
                 <br>
                 <div class="row" style="text-align: center;">
                     <div class="col">
+                    <button type="button" class="btn btn-danger" onclick="deleteOnAccount()">Hapus Akun</button>
                         <button type="submit" class="btn btn-warning" onclick="updateOnAccount()">Ubah Data Akun</button>
-                        <button type="button" class="btn btn-danger" onclick="deleteOnAccount()">Hapus Akun</button>
+                       
                     </div>
 
                 </div>

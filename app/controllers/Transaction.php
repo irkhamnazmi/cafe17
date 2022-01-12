@@ -231,14 +231,33 @@ class transaction extends Controller
            header('Location: ' . BASEURL);
        }
        $status = $this->model('Transaction_model')->getSingleRowByStatus($user);    
-        $data = [
-            'page' => $user['transaction_status'],
-            // 'row' => $this->model('Account_model')->getRowById($user['user_id']),
-            'rowId' => $status
+    
+       if($status['transaction_status'] == 'Menunggu Konfirmasi'){
+           $data = [
+             
+               'rowId' => $status,
+               'display'=> 'display:block',
+               'readonly' => ''
+   
+            ];
+       } 
+       else {
+           $data = [
+              
+               'rowId' => $status,
+               'display'=> 'display:none;',
+               'readonly' => 'readonly style="border: 0px; background-color: transparent;"'
+   
+            ];
+       } 
+    //    $data = [
+    //         'page' => $user['transaction_status'],
+    //         // 'row' => $this->model('Account_model')->getRowById($user['user_id']),
+    //         'rowId' => $status
             
            
           
-             ];
+    //          ];
 
         $this->view('template/header', $data);
         $this->view('template/navbar', $data);
@@ -295,5 +314,27 @@ class transaction extends Controller
 
          $this->view('transaction/detail', $data);
          
+    }
+
+
+    public function payment_process(){
+        $data = [
+            'transaction_id'=>$_POST['transaction_id'],
+            'transaction_method'=>$_POST['transaction_method'],
+            'transaction_image'=>$_POST['transaction_image']
+        ];
+
+        $this->model('Transaction_model')->postUpdateRowByPayment($data);
+        echo json_encode('Success'); 
+    }
+    public function payment_cancel(){
+        $data = [
+            'transaction_id'=>$_POST['transaction_id'],
+            'transaction_method'=>$_POST['transaction_method'],
+            'transaction_image'=>$_POST['transaction_image']
+        ];
+
+        $this->model('Transaction_model')->postUpdateRowByPayment($data);
+        echo json_encode('Success'); 
     }
 }

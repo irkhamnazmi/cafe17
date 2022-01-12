@@ -473,10 +473,10 @@ class Email extends Controller
         
         $html = $header.$body.$footer;
         $from_name = "Cafe17";
-        $user_email = "irkham.nazmi@gmail.com";
-        $pass_email = "pengguna12345";
+        $user_email = "maulanawildan21@gmail.com";
+        $pass_email = "Wildan060897";
         $email_penerima = $_SESSION['email']['email'];
-        $penerima_nama = "Irkham";
+        $penerima_nama = "Pelanggan Cafe 17";
         $mail = new PHPMailer(true);
         try {
             //Server settings

@@ -395,30 +395,36 @@
                <div class="modal-body">
                    <div class="row" style="margin: 10px;">
                        <div class="col">
-                           <div class="dropdown">
+                       <select class="form-control" id="transaction_method" name="transaction_method" required onchange="changeMethod()">
+                                   <option>Pilih Metode Pembayaran</option>
+                                   <option value="Bayar di Tempat">Bayar ditempat (COD)</option>
+                                   <option value="Dompet Digital">Dompet Digital</option>
+                       </select>
+                           <!-- <div class="dropdown">
                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                    Metode
                                </button>
+                              
                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                   <a class="dropdown-item" href="#" onclick="cod()">Bayar ditempat (COD)</a>
-                                   <a class="dropdown-item" href="#" onclick="ewallet()">Dompet Digital</a>
+                                   <a class="dropdown-item" href="javascript:void(0);" onclick="cod()">Bayar ditempat (COD)</a>
+                                   <a class="dropdown-item" href="javascript:void(0);" onclick="ewallet()">Dompet Digital</a>
 
 
                                </div>
-                           </div>
+                           </div> -->
 
                        </div>
                    </div>
 
                    <form novalidate class="needs-validation">
-
+                    
                        <div class="row" style="display: none;" id="ewallet">
                            <div class="col">
 
                                <div class="row" style="margin: 10px;">
 
                                    <div class="col">
-                                       <label for="user_scan_qr_code">Scan kode QRIS</label>
+                                       <label for="user_scan_qr_code">Lakukan Pindai kode QRIS di bawah ini</label>
 
                                    </div>
 
@@ -428,7 +434,7 @@
                                    <div class="col">
 
                                        <img src="<?= BASEURL; ?>/images/qrcodecafe.png" width="50%" />
-                                       <div class="invalid-feedback" id="email-login-error">
+                                       <div class="invalid-feedback" id="transaction-qrcode-error">
                                            Belum Ada Bukti yang dilampirkan
                                        </div>
                                    </div>
@@ -437,9 +443,10 @@
                                <div class="row" style="margin: 10px;">
 
                                    <div class="col">
-                                       <label for="transaction_foto">Upload Bukti Pembayaran</label>
-                                       <input type="file" class="form-control" required id="transaction_foto" name="transaction_foto">
-                                       <div class="invalid-feedback" id="email-login-error">
+                                       <label for="transaction_image">Upload Bukti Pembayaran</label>
+                                       <input type="file" class="form-control" required id="transaction_image" name="transaction_image">
+                                       <input type="hidden" class="form-control" required id="transaction_id" name="transaction_id">
+                                       <div class="invalid-feedback" id="transaction-image-error">
                                            Belum Ada Bukti yang dilampirkan
                                        </div>
                                    </div>
@@ -459,14 +466,14 @@
 
                            </div>
                        </div>
-                       <div class="row" style="display: block;" id="cod">
+                       <div class="row" style="display: none;" id="cod">
 
 
                            <div class="col">
                                <div class="row" style="margin: 10px;">
 
                                    <div class="col">
-                                       <label for="user_cod">Bayar di tempat (COD)</label>
+                                       <label for="user_cod">Tunggu di rumah saja, dan Pembayaran akan segera dilakukan bila Pesanan telah diterima</label>
 
                                    </div>
 
@@ -474,6 +481,7 @@
 
                                <div class="row" style="margin: 10px">
                                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_vivylat3.json" background="transparent" speed="1" style="width: 50%; text-align:center" loop autoplay></lottie-player>
+                                   <input type="hidden" class="form-control" required id="transaction_id" name="transaction_id">
                                </div>
 
                            </div>
@@ -481,7 +489,7 @@
                        </div>
                        <div class="modal-footer">
                            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="close">Nanti</button>
-                           <button type="submit" class="btn btn-primary">Proses Sekarang</button>
+                           <button id="btn" type="submit" class="btn btn-primary">Proses Sekarang</button>
                        </div>
                    </form>
 
