@@ -51,21 +51,21 @@
                                    <div class="row">
                                            <div class="col align-self-center">
                                                <h3> Atas Nama </h3>
-                                               <input class="form-control" type="text" id="transaction_customer_name" name="transaction_customer_name" value="<?= $data['rowId']['transaction_customer_name'];?>"/> 
+                                               <input class="form-control" type="text" id="transaction_customer_name" name="transaction_customer_name" value="<?= $data['rowId']['transaction_customer_name'];?>" <?= $data['readonly']; ?>/> 
                                                <br>
                                            </div>     
                                    </div>
                                    <div class="row">
                                            <div class="col align-self-center">
                                                <h3>Nomor WhatsApp Penerima </h3>
-                                               <input class="form-control" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="transaction_customer_phone_number" name="transaction_customer_phone_number" value="<?= $data['rowId']['transaction_customer_phone_number'];  ?>"/>
+                                               <input class="form-control" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="transaction_customer_phone_number" name="transaction_customer_phone_number" value="<?= $data['rowId']['transaction_customer_phone_number'];  ?>" <?= $data['readonly'];?> >
                                                <br>
                                            </div>     
                                    </div>
                                    <div class="row">
                                            <div class="col align-self-center">
                                                <h4>di Lokasi</h4>
-                                                <input class="form-control" type="text" id="transaction_customer_address" name="transaction_customer_address" value="<?= $data['rowId']['transaction_customer_address']; ?>"/>
+                                                <input class="form-control" type="text" id="transaction_customer_address" name="transaction_customer_address" value="<?= $data['rowId']['transaction_customer_address']; ?>" <?= $data['readonly'];?>/>
                                          
                                            </div>     
                                    </div>
@@ -105,8 +105,8 @@
                             case 'Menunggu Pembayaran':
                                 ?> 
                                 <h4 class="text-center" style="display:<?= $data['display'];?>;"> Segera Melakukan Pembayaran untuk mempercepat proses Pesanan Anda </h4>
-                                <button class="btn btn-danger" type="button" onclick="CancelPaymentOnTransaction('<?= $data['rowId']['transaction_invoice_code'];?>')" style="display:<?= $data['display']?>"> Batal</button>
-                                <button class="btn btn-success" type="button" onclick="paymentOnTransaction('<?= $data['rowId']['transaction_invoice_code'];?>')" style="display:<?= $data['display']?>"> Bayar Sekarang</button>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#formModal" data-id="<?= $data['rowId']['transaction_id'];?>" type="button" onclick="CancelPaymentOnTransaction()" style="display:<?= $data['display']?>"> Batal</button>
+                                <button class="btn btn-success" type="button" onclick="paymentOnTransaction(<?= $data['rowId']['transaction_id'];?>)" style="display:<?= $data['display']?>"> Bayar Sekarang</button>
                                <?php    
                             break;
                             

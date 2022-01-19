@@ -15,6 +15,7 @@ class Blog extends Controller
         $this->view('template/header', $data);
         $this->view('template/navbar', $data);
         $this->view('blog/index', $data);
+        $this->view('template/modal',$data);
         $this->view('template/footer', $data);
     }
 
@@ -48,6 +49,7 @@ class Blog extends Controller
         $this->view('template/header', $data);
         $this->view('template/navbar', $data);
         $this->view('blog/view_blog', $data);
+        $this->view('template/modal',$data);
         $this->view('template/footer', $data);
         }
         else{

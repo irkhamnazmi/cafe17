@@ -15,6 +15,7 @@ class About extends Controller
         $this->view('template/header', $data);
         $this->view('template/navbar', $data);
         $this->view('about/index', $data);
+        $this->view('template/modal',$data);
         $this->view('template/footer', $data);
     }    
 

@@ -16,6 +16,7 @@ class Account extends Controller
         $this->view('template/header', $data);
         $this->view('template/navbar', $data);
         $this->view('account/index', $data);
+        $this->view('template/modal',$data);
         $this->view('template/footer', $data);
     }
 

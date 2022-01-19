@@ -29,6 +29,7 @@ class transaction extends Controller
         $this->view('template/header', $data);
         $this->view('template/navbar', $data);
         $this->view('transaction/index', $data);
+        $this->view('template/modal',$data);
         $this->view('template/footer', $data);
 
         echo "<script>$('#detail').load(baseurl + '/transaction/detaildata');</script>";
@@ -82,6 +83,7 @@ class transaction extends Controller
         $this->view('template/header', $data);
         $this->view('template/navbar', $data);
         $this->view('transaction/payment', $data);
+        $this->view('template/modal',$data);
         $this->view('template/footer', $data);
 
         echo "<script>$('#detail').load(baseurl + '/transaction/detaildata');</script>";
@@ -99,6 +101,7 @@ class transaction extends Controller
         $this->view('template/header', $data);
         $this->view('template/navbar', $data);
         $this->view('transaction/payment', $data);
+        $this->view('template/modal',$data);
         $this->view('template/footer', $data);
     }
 
@@ -262,6 +265,7 @@ class transaction extends Controller
         $this->view('template/header', $data);
         $this->view('template/navbar', $data);
         $this->view('transaction/transaction_detail', $data);
+        $this->view('template/modal',$data);
         $this->view('template/footer', $data);
 
         echo "<script>$('#detail').load(baseurl + '/transaction/detaildata_transaction/".$transaction."');</script>";
