@@ -104,7 +104,7 @@ class Transaction_model
     {
         $query ="INSERT INTO ". $this->table ."
                 VALUES
-                ('',CURRENT_TIMESTAMP, '',:user_id, '', :transaction_status, '', :transaction_category,'','','')";
+                ('',CURRENT_TIMESTAMP, '',:user_id, '', :transaction_status,'', :transaction_category,'','','','')";
 
         $this->db->query($query);
         $this->db->bind('user_id',$data['user_id']);
