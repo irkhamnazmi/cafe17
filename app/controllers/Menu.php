@@ -83,19 +83,7 @@ class Menu extends Controller
       $transaction = $this->model('Transaction_model')->getSingleRowByStatus($user);
        
         if(empty($transaction)){
-            // $x = $this->model('Transaction_model')->getLastRow();
-           
-            // if(empty($x['code'])){
-            //     $order = 1;
-            //     // var_dump($order);
-               
-            // }else{
-            //     $number = substr($x['code'],strpos($x['code'],'INV'));
-            //     $order = substr($number, 5,7);
-            //     $order++; 
-            // }
-            // $code = 'CAFE17PWT/'.date('Ymd').'/INV';
-            // $new_inv = $code.sprintf("%03s", $order);
+          
 
             $data =[
                 'transaction_status' => 'Keranjang',

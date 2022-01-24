@@ -322,14 +322,24 @@ class transaction extends Controller
 
 
     public function payment_process(){
+        if($_POST['transaction_method'] == 'Dompet Digital'){
+            $image = $_FILES['file'];    
+        }else{
+            $image = "";
+        }
         $data = [
             'transaction_id'=>$_POST['transaction_id'],
             'transaction_method'=>$_POST['transaction_method'],
-            'transaction_image'=>$_POST['transaction_image']
+            'transaction_status'=>"Sedang Proses",
+            'transaction_image'=>$image
         ];
 
-        $this->model('Transaction_model')->postUpdateRowByPayment($data);
-        echo json_encode('Success'); 
+        
+        if($this->model('Transaction_model')->postUpdateRowByPayment($data)){
+            //flasher
+        }
+    
+   
     }
     public function payment_cancel(){
         $data = [

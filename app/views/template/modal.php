@@ -334,14 +334,14 @@
                            <span aria-hidden="true">&times;</span>
                        </button>
                    </div>
-                   <form novalidate class="needs-validation">
+                   <form novalidate class="needs-validation" action="<?= BASEURL; ?>/transaction/payment_process" method="post" enctype="multipart/form-data" >
                    <div class="modal-body">
                        <div class="row" style="margin: 10px;">
                            <div class="col">
                                <label for="transaction_method"></label>
                                <select class="form-control" id="transaction_method" name="transaction_method" required onchange="changeMethod()">
                                    <option value="">Pilih Metode Pembayaran</option>
-                                   <option value="Bayar di Tempat">Bayar ditempat (COD)</option>
+                                   <option value="Bayar di Tempat">Bayar di tempat (COD)</option>
                                    <option value="Dompet Digital">Dompet Digital</option>
                                </select>
                                <div class="invalid-feedback" id="transaction-method-error">
@@ -379,7 +379,7 @@
 
                                        <div class="col">
                                            <label for="transaction_image">Upload Bukti Pembayaran</label>
-                                           <input type="file" class="form-control" required id="transaction_image" name="transaction_image">
+                                           <input type="file" class="form-control" required id="transaction_image" name="transaction_image" multiple="false" accept="image/*">
                                           
                                            <div class="invalid-feedback" id="transaction-image-error">
                                                Belum Ada Bukti yang dilampirkan

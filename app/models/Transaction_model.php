@@ -185,7 +185,7 @@ class Transaction_model
         $query ="UPDATE ". $this->table ."
                 SET  transaction_method = :transaction_method,
                      transaction_image = :transaction_image,
-                     transaction_status = 'Sedang Proses';
+                     transaction_status = :transaction_status;
                 WHERE transaction_id = :transaction_id";
 
         $this->db->query($query);
