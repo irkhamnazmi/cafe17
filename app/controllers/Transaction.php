@@ -342,11 +342,15 @@ class transaction extends Controller
    
     }
     public function payment_cancel(){
+        
+
         $data = [
             'transaction_id'=>$_POST['transaction_id'],
             'transaction_method'=>$_POST['transaction_method'],
             'transaction_image'=>$_POST['transaction_image']
         ];
+
+        
 
         $this->model('Transaction_model')->postUpdateRowByPayment($data);
         echo json_encode('Success'); 
