@@ -323,10 +323,28 @@ class transaction extends Controller
 
     public function payment_process(){
         if($_POST['transaction_method'] == 'Dompet Digital'){
-            $image = $_FILES['file'];    
+            // var_dump($_FILES['transaction_image']);
+            $target_dir = BASEDIRECTORY_ADMIN.'/uploads/transaction/images/';
+            $file_name = basename($_FILES["transaction_image"]["name"]);
+            $target_file = $target_dir . $file_name;
+            // $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            // $check = getimagesize($_FILES["transaction_image"]["tmp_name"]);
+            $upload = move_uploaded_file($_FILES["transaction_image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . $target_file);
+            if ($upload == false) {
+
+                // Flasher::setFlash('Data gagal', 'ditambahkan', 'danger');
+                // header('Location: ' . BASEURL . '/transaction');
+                // exit;
+                var_dump($upload);
+            } else {
+              
+                $image = $file_name;
+                var_dump($upload);
+            }    
         }else{
             $image = "";
         }
+        
         $data = [
             'transaction_id'=>$_POST['transaction_id'],
             'transaction_method'=>$_POST['transaction_method'],
@@ -337,6 +355,7 @@ class transaction extends Controller
         
         if($this->model('Transaction_model')->postUpdateRowByPayment($data)){
             //flasher
+            echo '<script>history.back()</script>';
         }
     
    
@@ -354,5 +373,6 @@ class transaction extends Controller
 
         $this->model('Transaction_model')->postUpdateRowByPayment($data);
         echo json_encode('Success'); 
+        
     }
 }
