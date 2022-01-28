@@ -354,11 +354,12 @@ class transaction extends Controller
 
         
         if($this->model('Transaction_model')->postUpdateRowByPayment($data)){
-            Flasher::setFlash('Data berhasil', 'diproses', 'success');
+            $row = $this->model('Transaction_model')->getSingleRowByTransactionId($data['transaction_id']);
+            Flasher::setFlash('Pesanan '.$row['transaction_invoice_code'].' Berhasil', 'diproses. Tunggu validasi dari Kasir', 'success');
             exit;
-            echo '<script>history.back()</script>';
+            header('Location: ' . BASEURL . '/transaction/payment');
         }
-    
+       
    
     }
     public function payment_cancel(){

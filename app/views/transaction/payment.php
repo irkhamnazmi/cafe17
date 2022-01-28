@@ -2,6 +2,11 @@
     <section class="herobwa mt-5">
         <div class="container">
             <div class="row">
+            <div class="col">
+                <?php Flasher::flash() ?>          
+                </div>
+            </div>
+            <div class="row">
                 <div class="col align-self-stretch">
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
