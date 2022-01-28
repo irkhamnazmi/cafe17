@@ -124,6 +124,7 @@ function paymentOnTransaction(id){
   $('#user_action').html('payment');
   $('#method').html('cod');
   $('#payment').css('display','block');
+  $('#alert').css('display','none');
   $('#formModal').modal();
   $('#search').css('display','none');
   $('.transaction-id').val(id);
@@ -142,6 +143,7 @@ function CancelPaymentOnTransaction(){
   $('#payment').css('display','none');
   $('#user_action').html('alert');
   $('#alert').css('display','block');
+  
 
   $('#title').html('Apakah pesanan ini mau dibatalkan?');
   $('#content').html('Membatalkan pesanan untuk mengubah beberapa menu atau informasi penerima');

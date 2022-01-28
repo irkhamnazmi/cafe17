@@ -122,7 +122,7 @@
                             <div class="card-body">
 
                                 <div class="col">
-                                    <h2>Ups ... Belum Ada Transaksi apapun</h2>
+                                <?php Flasher::flash() ?>
                                 </div>
 
                             </div>

@@ -354,7 +354,8 @@ class transaction extends Controller
 
         
         if($this->model('Transaction_model')->postUpdateRowByPayment($data)){
-            //flasher
+            Flasher::setFlash('Data berhasil', 'diproses', 'success');
+            exit;
             echo '<script>history.back()</script>';
         }
     
@@ -370,9 +371,10 @@ class transaction extends Controller
         ];
 
         
-
+        
         $this->model('Transaction_model')->postUpdateRowByPayment($data);
-        echo json_encode('Success'); 
+        echo json_encode('Success');    
+        Flasher::setFlash('Data berhasil', 'dihapus', 'danger');
         
     }
 }
