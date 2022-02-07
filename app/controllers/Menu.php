@@ -39,20 +39,20 @@ class Menu extends Controller
     {
 
 
-        $x = strpos($menu,'-');
-        $get_id = substr($menu,0,$x);
-        $get_menu = substr($menu,$x+1);
-        $replace = str_replace('-', ' ', $get_menu);
+        // $x = strpos($menu,'-');
+        // $get_id = substr($menu,0,$x);
+        // $get_menu = substr($menu,$x+1);
+        // $replace = str_replace('-', ' ', $get_menu);
       
       
-        $get_key = [
+        // $get_key = [
 
-            'menu_id' => $get_id,
-            'menu_name' => $replace 
+        //     'menu_id' => $get_id,
+        //     'menu_name' => $replace 
 
-        ];
+        // ];
 
-        $key = $this->model('Menu_model')->getRowByKeyword($get_key);
+        $key = $this->model('Menu_model')->getRowByKeyword($menu);
             
         if(!empty($key)){
             $data = [

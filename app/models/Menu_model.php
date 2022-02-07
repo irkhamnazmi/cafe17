@@ -32,9 +32,10 @@ class Menu_model{
 
     public function getRowByKeyword($key)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE menu_id = :menu_id AND menu_name = :menu_name');
-        $this->db->bind('menu_id',$key['menu_id']);
-        $this->db->bind('menu_name',$key['menu_name']);
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE menu_code = :menu_code');
+        $this->db->bind('menu_code',$key);
+        // $this->db->bind('menu_id',$key['menu_id']);
+        // $this->db->bind('menu_name',$key['menu_name']);
         return $this->db->resultSet();
     }
     public function getRowByCategory($category)

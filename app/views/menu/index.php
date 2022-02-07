@@ -47,7 +47,8 @@
                                     <!-- <h6><span class="iconify" data-inline="false" data-icon="bi:cart-check"
                                             style="font-size: 24px;"></span> 0</h6> -->
                                     <div class="col-md-12 text-center">
-                                        <button type="button"  onclick="location.href='<?= BASEURL; ?>/menu/order/<?= $title = str_replace(' ', '-', $row['menu_id'].' '.$row['menu_name']);?>'" class="btn btn-primary">Pesan</button>
+                                        <button type="button"  onclick="location.href='<?= BASEURL; ?>/menu/order/<?= $title = $row['menu_code'];?>'" class="btn btn-primary">Pesan</button>
+                                        <!-- <button type="button"  onclick="location.href='<?= BASEURL; ?>/menu/order/<?= $title = str_replace(' ', '-', $row['menu_id'].' '.$row['menu_name']);?>'" class="btn btn-primary">Pesan</button> -->
 
                                     </div>
                                 </div>

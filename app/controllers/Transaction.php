@@ -353,12 +353,12 @@ class transaction extends Controller
         ];
 
         
-        if($this->model('Transaction_model')->postUpdateRowByPayment($data)){
+            $this->model('Transaction_model')->postUpdateRowByPayment($data);
             $row = $this->model('Transaction_model')->getSingleRowByTransactionId($data['transaction_id']);
             Flasher::setFlash('Pesanan '.$row['transaction_invoice_code'].' Berhasil', 'diproses. Tunggu validasi dari Kasir', 'success');
-            exit;
+            
             header('Location: ' . BASEURL . '/transaction/payment');
-        }
+        
        
    
     }

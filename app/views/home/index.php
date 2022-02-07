@@ -24,7 +24,7 @@
 
                             ?>
                                 <div class="carousel-item <?= $v = (0 == $count) ? 'active' : ''; ?>">
-                                    <a type="button" href="<?= BASEURL; ?>/menu/order/<?= $title = str_replace(' ', '-', $row['menu_id'].' '.$row['menu_name']); ?>"><img width="100%" height="100%" src="<?= BASEURL_ADMIN; ?>/uploads/images/<?= $row['menu_image']; ?>" alt=""></a>
+                                    <a type="button"  onclick="location.href='<?= BASEURL; ?>/menu/order/<?= $title = $row['menu_code'];?>'"><img width="100%" height="100%" src="<?= BASEURL_ADMIN; ?>/uploads/images/<?= $row['menu_image']; ?>" alt=""></a>
                                 </div>
 
 
