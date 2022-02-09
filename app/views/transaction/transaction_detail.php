@@ -109,6 +109,11 @@
                                 <button class="btn btn-success" type="button" onclick="paymentOnTransaction(<?= $data['rowId']['transaction_id'];?>)" style="display:<?= $data['display']?>"> Bayar Sekarang</button>
                                <?php    
                             break;
+                            case 'Lunas':
+                                ?> 
+                                <button class="btn btn-success" type="button" onclick="window.location.href='<?= BASEURL_ADMIN.'/transaction/receipt/'.$data['rowId']['transaction_id'];?>';"> Lihat Bukti Pembayaran</button>
+                               <?php    
+                            break;
                             
                         }
                       ?>

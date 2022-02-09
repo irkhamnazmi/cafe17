@@ -37,7 +37,10 @@ class transaction extends Controller
 
     public function payment()
     {
-        
+        $user = $_SESSION['user_account']['id'];
+        if(empty($user)){
+            header('Location: ' . BASEURL);
+        }
         $this->view('template/header');
         $this->view('template/navbar');
         $this->view('transaction/payment');
@@ -50,6 +53,7 @@ class transaction extends Controller
      public function transactionpayment($id =''){
         
         $user = $_SESSION['user_account']['id'];
+      
         $status = $id;
         if(empty($id)){
             $row = $this->model('Transaction_model')->getRowByTransaction($user); 
@@ -342,9 +346,8 @@ class transaction extends Controller
             'transaction_image'=>$image
         ];
 
-        
+            $row = $this->model('Transaction_model')->getSingleRowByTransactionId($data);   
             $this->model('Transaction_model')->postUpdateRowByPayment($data);
-            $row = $this->model('Transaction_model')->getSingleRowByTransactionId($data['transaction_id']);
             Flasher::setFlash('Pesanan '.$row['transaction_invoice_code'].' Berhasil', 'diproses. Tunggu validasi dari Kasir', 'success');
             
             header('Location: ' . BASEURL . '/transaction/payment');
