@@ -86,9 +86,11 @@
 
 
        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
-
+       <script src="<?= BASEURL; ?>/js/notification.js"></script>
+    
 
        </body>
 
        </html>
+
+   

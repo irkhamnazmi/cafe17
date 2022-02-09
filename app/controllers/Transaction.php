@@ -35,75 +35,64 @@ class transaction extends Controller
         echo "<script>$('#detail').load(baseurl + '/transaction/detaildata');</script>";
     }
 
-    public function payment($id ='')
+    public function payment()
     {
-     
-    
-
-       $user = $_SESSION['user_account']['id'];
-       
-       if(empty($user)){
-          
-           header('Location: ' . BASEURL);
-       }
-
-       if(empty($id)){
-        header('Location: ' . BASEURL . '/transaction/payment/Semua-Transaksi'); 
-       }
-
-       $status = str_replace('-', ' ', $id);
-
-      
-       
-       if($status == 'Semua Transaksi'){
-        $row = $this->model('Transaction_model')->getRowByTransaction($user);  
-       }   
-        else{
-         
-        $filter = [
-            'transaction_status'=>$status,
-            'user_id'=>$user
-        ];   
-        $x = $this->model('Transaction_model')->getRowByTransactionStatus($filter);
-       
-        if(empty($x)){
-           $row = ''; 
-        } else{
-           $row = $x;  
-        }
-       }
-
-      
-     
-       $data = [
-            'status' => $status,
-            'row' => $row
-        ];
-
-        $this->view('template/header', $data);
-        $this->view('template/navbar', $data);
-        $this->view('transaction/payment', $data);
-        $this->view('template/modal',$data);
-        $this->view('template/footer', $data);
-
-        echo "<script>$('#detail').load(baseurl + '/transaction/detaildata');</script>";
-    }
-
-    public function filter($category)
-    {
-        $data = [
-            'page' => 'Pembayaran',
-            'category' => $category,
-            'row' => $this->model('Transaction_model')->getRowByCategory($category)
         
+        $this->view('template/header');
+        $this->view('template/navbar');
+        $this->view('transaction/payment');
+        $this->view('template/modal');
+        $this->view('template/footer'); 
+
+        echo "<script>$('#detail').load(baseurl + '/transaction/transactionpayment');</script>";  
+    }
+
+     public function transactionpayment($id =''){
+        
+        $user = $_SESSION['user_account']['id'];
+        $status = $id;
+        if(empty($id)){
+            $row = $this->model('Transaction_model')->getRowByTransaction($user); 
+         }else{
+            $filter = [
+                'transaction_status'=>$id,
+                'user_id'=>$user
+            ];   
+            $x = $this->model('Transaction_model')->getRowByTransactionStatus($filter);
+           
+            if(empty($x)){
+               $row = ''; 
+            } else{
+               $row = $x;  
+            }
+         }
+         
+     
+
+       $data = [
+        'status' => $status,
+        'row' => $row
         ];
 
-        $this->view('template/header', $data);
-        $this->view('template/navbar', $data);
-        $this->view('transaction/payment', $data);
-        $this->view('template/modal',$data);
-        $this->view('template/footer', $data);
-    }
+        $this->view('transaction/transaction_row', $data);
+        
+     }
+
+    // public function filter($category)
+    // {
+    //     $data = [
+    //         'page' => 'Pembayaran',
+    //         'category' => $category,
+    //         'row' => $this->model('Transaction_model')->getRowByCategory($category)
+        
+    //     ];
+
+    //     $this->view('template/header', $data);
+    //     $this->view('template/navbar', $data);
+    //     $this->view('transaction/payment', $data);
+    //     $this->view('template/modal',$data);
+    //     $this->view('template/footer', $data);
+    // }
 
     // public function getdetail_id(){
     //     // echo 'Berhasil';
@@ -268,7 +257,8 @@ class transaction extends Controller
         $this->view('template/modal',$data);
         $this->view('template/footer', $data);
 
-        echo "<script>$('#detail').load(baseurl + '/transaction/detaildata_transaction/".$transaction."');</script>";
+        echo "<script> 
+        $('#detail').load(baseurl + '/transaction/detaildata_transaction/".$transaction."');</script>";
     }
 
     public function detaildata_transaction($transaction_detail){

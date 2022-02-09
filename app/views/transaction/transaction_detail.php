@@ -88,7 +88,7 @@
                 </div>
             </div>
         </section>
-
+    <section>
         <div id="detail">
         </div>  
         

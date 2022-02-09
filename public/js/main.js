@@ -507,6 +507,16 @@ function keyWordToSearch(){
 
 function detailSearch(x){
   window.location.href = baseurl+'/menu/order/'+x.replace(' ','-');
- 
- 
+
 }
+
+// $(document).ready(function(){
+//   setInterval(function(){
+//     url = window.location.pathname;
+
+//     if(url == '/cafe17/public/transaction/payment/'){
+//       $('#x').load(baseurl + '/transaction/transaction_payment_row');
+//       // console.log('dadi');
+//     }
+//     }, 5000);
+// });
