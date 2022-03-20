@@ -65,32 +65,59 @@
 
 
 
-       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-       <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-       <script type="text/javascript" src="<?= BASEURL; ?>/js/bootstrap.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="<?= BASEURL; ?>/js/bootstrap.js"></script>
 
-       <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
-
-
-
-
-       <script>
-           var baseurl = "<?= BASEURL ?>";
-           var baseUrlAdmin = "<?= BASEURL_ADMIN; ?>";
-       </script>
-       <script src="<?= BASEURL; ?>/js/main.js"></script>
-
-
-       <script type="text/javascript" src="<?= BASEURL; ?>/js/formValidate.js"></script>
-
-
-
-       <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-       <script src="<?= BASEURL; ?>/js/notification.js"></script>
-    
-
-       </body>
-
-       </html>
+   <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+   
+  
+   
 
    
+
+   <script>
+       var baseurl = "<?= BASEURL ?>";
+       var baseUrlAdmin = "<?= BASEURL_ADMIN ?>";
+   </script>
+
+   <?php 
+   
+   if(empty($_SESSION['user_account'])){
+        ?>
+        <script src="js/disk/longbow.slidercaptcha.min.js"></script>
+        <script>
+        var captcha = sliderCaptcha({
+           id: 'captcha',
+           repeatIcon: 'fa fa-redo',
+           onSuccess: function() {
+               var handler = setTimeout(function() {
+                   window.clearTimeout(handler);
+                   //  captcha.reset();
+                   $('#validation').val('success');
+                   
+
+               }, 500);
+           }
+       });
+        </script>
+        <?php 
+   }
+
+   ?>
+
+   <script src="<?= BASEURL; ?>/js/main.js"></script>
+
+
+   <script type="text/javascript" src="<?= BASEURL; ?>/js/formValidate.js"></script>
+
+
+
+   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+   <script src="<?= BASEURL; ?>/js/notification.js"></script>
+
+ 
+
+   </body>
+
+   </html>

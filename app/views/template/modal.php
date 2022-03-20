@@ -167,6 +167,8 @@
 
                                    </div>
 
+
+
                                    <div class="row" style="margin: 10px;">
 
                                        <div class="col">
@@ -174,6 +176,32 @@
                                        </div>
 
                                    </div>
+
+                                  
+                                       <div class="row" style="margin: 10px;">
+
+                                           <div class="slidercaptcha card ml-3" style="height: max-content;">
+                                               <div class="card-header">
+                                                   <span style="color:#000000">Lengkapi potongan gambar ini</span>
+                                               </div>
+                                               <div class="card-body mt-2 mb-3">
+                                                   <div id="captcha"></div>
+                                                   <label for="validation"></label>
+                                                   <input class="form-control" type="hidden" name="captcha" id="validation" required>
+                                                   <div class="invalid-feedback border-0 text-center mx-auto" id="validation-error">Anda Melewatkan ini</div>
+                                               </div>
+
+                                               <div class="card-footer border-0" style="background-color: white; text-align: center">
+                                                   <a style="font-size: small;" href="https://www.jqueryscript.net/plus/search.php?keyword=ArgoZhang">Developed by ArgoZhang</a>
+                                               </div>
+                                               
+                                           </div>
+
+                                          
+
+                                       </div>
+                                 
+
 
                                </div>
 
@@ -334,25 +362,25 @@
                            <span aria-hidden="true">&times;</span>
                        </button>
                    </div>
-                   <form novalidate class="needs-validation" action="<?= BASEURL; ?>/transaction/payment_process" method="post" enctype="multipart/form-data" >
-                   <div class="modal-body">
-                       <div class="row" style="margin: 10px;">
-                           <div class="col">
-                               <label for="transaction_method"></label>
-                               <select class="form-control" id="transaction_method" name="transaction_method" required onchange="changeMethod()">
-                                   <option value="">Pilih Metode Pembayaran</option>
-                                   <option value="Bayar di Tempat">Bayar di tempat (COD)</option>
-                                   <option value="Dompet Digital">Dompet Digital</option>
-                               </select>
-                               <div class="invalid-feedback" id="transaction-method-error">
-                                              
+                   <form novalidate class="needs-validation" action="<?= BASEURL; ?>/transaction/payment_process" method="post" enctype="multipart/form-data">
+                       <div class="modal-body">
+                           <div class="row" style="margin: 10px;">
+                               <div class="col">
+                                   <label for="transaction_method"></label>
+                                   <select class="form-control" id="transaction_method" name="transaction_method" required onchange="changeMethod()">
+                                       <option value="">Pilih Metode Pembayaran</option>
+                                       <option value="Bayar di Tempat">Bayar di tempat (COD)</option>
+                                       <option value="Dompet Digital">Dompet Digital</option>
+                                   </select>
+                                   <div class="invalid-feedback" id="transaction-method-error">
+
+                                   </div>
+
                                </div>
-
                            </div>
-                       </div>
 
-                    
-                       <input type="hidden" class="form-control transaction-id" name="transaction_id">
+
+                           <input type="hidden" class="form-control transaction-id" name="transaction_id">
                            <div class="row" style="display: none;" id="ewallet">
                                <div class="col">
 
@@ -370,7 +398,7 @@
 
                                            <img src="<?= BASEURL; ?>/images/qrcodecafe.png" width="50%" />
                                            <div class="invalid-feedback" id="transaction-qrcode-error">
-                                             
+
                                            </div>
                                        </div>
 
@@ -380,7 +408,7 @@
                                        <div class="col">
                                            <label for="transaction_image">Upload Bukti Pembayaran</label>
                                            <input type="file" class="form-control" required id="transaction_image" name="transaction_image" multiple="false" accept="image/*">
-                                          
+
                                            <div class="invalid-feedback" id="transaction-image-error">
                                                Belum Ada Bukti yang dilampirkan
                                            </div>
@@ -406,7 +434,7 @@
 
                                    <div class="row" style="margin: 10px">
                                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_vivylat3.json" background="transparent" speed="1" style="width: 50%; text-align:center" loop autoplay></lottie-player>
-                                      
+
                                    </div>
 
                                </div>
@@ -416,94 +444,35 @@
                                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="close">Nanti</button>
                                <button id="btn" type="submit" class="btn btn-primary">Proses Sekarang</button>
                            </div>
-                       </form>
+                   </form>
 
-
-
-                   </div>
 
 
                </div>
 
-               <!-- Alert -->
-               <div class="modal-content" id="alert" style="display: none;">
 
-                   <div class="modal-header">
-                       <h1 class="modal-title" id="title"></h1>
-                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                           <span aria-hidden="true">&times;</span>
-                       </button>
-                   </div>
+       </div>
 
-                   <div class="modal-body">
-                       <form action="<?= BASEURL ?>/transaction/delete">
-                           <div class="row">
+       <!-- Alert -->
+       <div class="modal-content" id="alert" style="display: none;">
+
+           <div class="modal-header">
+               <h1 class="modal-title" id="title"></h1>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+           </div>
+
+           <div class="modal-body">
+               <form action="<?= BASEURL ?>/transaction/delete">
+                   <div class="row">
+                       <div class="col">
+
+                           <div class="row" style="margin: 10px;">
+
                                <div class="col">
 
-                                   <div class="row" style="margin: 10px;">
-
-                                       <div class="col">
-
-                                           <h3 id="content">Membatalkan Pesanan ini akan menghapus seluruh data makanan yang sudah dipesan. </h3>
-
-                                       </div>
-
-                                   </div>
-
-
-
-                               </div>
-
-
-
-                           </div>
-                           <div class="modal-footer">
-                               <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Nanti</button>
-                               <button type="submit" class="btn btn-danger">Proses</button>
-                           </div>
-                       </form>
-                   </div>
-
-               </div>
-
-           <?php
-            }
-            ?>
-           <!-- Searching -->
-           <div class="modal-content" id="search" style="display: none;">
-
-               <div class="modal-header">
-                   <h1 class="modal-title" id="exampleModalLabel">Cari Menu yang Enak</h1>
-                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
-                   </button>
-               </div>
-
-               <div class="modal-body">
-                   <form novalidate class="needs-validation">
-                       <div class="row">
-                           <div class="col">
-
-                               <div class="row" style="margin: 10px;">
-
-                                   <div class="col">
-                                       <label for="user_search">Kata Kunci</label>
-                                       <input type="email" class="form-control" required id="user_search" name="user_search" oninput="keyWordToSearch()">
-                                       <div class="invalid-feedback" id="user-forgot-error">
-                                           Kata Kunci
-                                       </div>
-                                   </div>
-
-                               </div>
-
-                               <div class="row" style="margin: 10px;">
-                                   <ul id="row">
-
-                                   </ul>
-
-
-
-
+                                   <h3 id="content">Membatalkan Pesanan ini akan menghapus seluruh data makanan yang sudah dipesan. </h3>
 
                                </div>
 
@@ -513,12 +482,71 @@
 
                        </div>
 
-                   </form>
-               </div>
 
+
+                   </div>
+                   <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Nanti</button>
+                       <button type="submit" class="btn btn-danger">Proses</button>
+                   </div>
+               </form>
            </div>
-           <?php
-            ?>
+
        </div>
 
-   </div>    
+   <?php
+            }
+    ?>
+   <!-- Searching -->
+   <div class="modal-content" id="search" style="display: none;">
+
+       <div class="modal-header">
+           <h1 class="modal-title" id="exampleModalLabel">Cari Menu yang Enak</h1>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+           </button>
+       </div>
+
+       <div class="modal-body">
+           <form novalidate class="needs-validation">
+               <div class="row">
+                   <div class="col">
+
+                       <div class="row" style="margin: 10px;">
+
+                           <div class="col">
+                               <label for="user_search">Kata Kunci</label>
+                               <input type="email" class="form-control" required id="user_search" name="user_search" oninput="keyWordToSearch()">
+                               <div class="invalid-feedback" id="user-forgot-error">
+                                   Kata Kunci
+                               </div>
+                           </div>
+
+                       </div>
+
+                       <div class="row" style="margin: 10px;">
+                           <ul id="row">
+
+                           </ul>
+
+
+
+
+
+                       </div>
+
+                   </div>
+
+
+
+               </div>
+
+           </form>
+       </div>
+
+   </div>
+   <?php
+    ?>
+   </div>
+
+   </div>

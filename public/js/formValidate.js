@@ -134,24 +134,50 @@
           case 'login':
             var email = $('#user_email_login').val();
             var password = $('#user_password_login').val();
+            var captchaVal = $('#validation').val(); 
+
+         
+            
 
             if (email == '') {
               event.preventDefault();
               event.stopPropagation();
               $('#user_email_login').removeClass("form-control").addClass("form-control is-invalid");
               $('#email-login-error').text('Email Anda Belum diisi');
+              
+              captcha.reset();
+              // captcha.stop();
             } else if (!validateEmail(email)) {
               event.preventDefault();
               event.stopPropagation();
               $('#user_email_login').removeClass("form-control").addClass("form-control is-invalid");
               $('#email-login-error').text('Email Anda Tidak Valid');
+              captcha.reset();
+              // captcha.stop();
             }
             if (password == '') {
               event.preventDefault();
               event.stopPropagation();
+              captcha.reset();
+              // captcha.stop();
               $('#user_password_login').removeClass("form-control").addClass("form-control is-invalid");
               $('#password-login-error').text('Password Anda Belum diisi');
-            } else {
+            }
+
+            if(captchaVal == ''){
+              event.preventDefault();
+              event.stopPropagation();
+              $('#validation').removeClass("form-control").addClass("form-control is-invalid");
+              captcha.reset();
+              // captcha.stop();
+            }
+
+            // if(captchaVal == ''){
+            //   event.preventDefault();
+            //   event.stopPropagation();
+
+            // }
+            else {
               event.preventDefault();
               event.stopPropagation();
 
@@ -171,6 +197,8 @@
                     $('#user_password_login').removeClass("form-control").addClass("form-control is-invalid");
                     $('#email-login-error').text('Mungkin email anda kurang tepat');
                     $('#password-login-error').text(' Atau Mungkin password anda kurang tepat');
+                    captcha.reset();
+                    // captcha.stop();
                   } else {
                     $.ajax({
                       url: baseurl + '/account/login',
@@ -382,54 +410,7 @@
             }
             
 
-            // var fd = new FormData();
-            
-            // if (transaction_method == "") {
-            //   $('#transaction_method').removeClass("form-control").addClass("form-control is-invalid");
-            //   $('#transaction-method-error').text(' Ups metodenya belum dipilih');
-            // }
-            // if (transaction_method == 'Dompet Digital') {
-            
-            //   var image = $("#transaction_image");
-            //   fd.append('file',image[0].files);
-            //   fd.append('transaction_id',transaction_id);
-            //   fd.append('transaction_method',transaction_method);
-            //   // console.log(image[0].files);
-            //   // var imageFile = $("#transaction_image").prop("files")[0];
-            //   // var form_data = new FormData();                  // Creating object of FormData class
-            //   // form_data.append("file", imageFile)
-             
-            //   if (image.val() == '') {
-            //     $('#transaction_image').removeClass("form-control").addClass("form-control is-invalid");
-            //     $('transaction-image-error').text('Belum melampirkan bukti pembayaran');
-            //   } else{
-            //     $.ajax({
-            //       url: baseurl + '/transaction/payment_process',
-            //       data: fd,
-            //       method: 'POST',
-            //       enctype: 'multipart/form-data',
-            //       contentType: false,
-            //       processData: false,
-            //       beforeSend: function () {
-            //         toastr.success('Pesanan ini berhasil diproses');
-            //       },
-            //       success: function (data) {
-                   
-            //         console.log(data);
-            //         // window.location.href = baseurl + '/transaction/payment';
-  
-  
-            //       }
-            //     });
-            //   }
-
-            
-
-
-            // } else {
-
-           
-            // }
+         
 
             break;
 

@@ -102,8 +102,8 @@ function whatsapp(id){
   var body = "\n "+id+" \n";
   var footer = "Mohon Segera diproses Terima Kasih.";
   var text = header+body+footer; 
-  window.location.href = 'https://wa.me/62895336272308/?text='+text;
-  console.log(id);
+  window.open = 'https://wa.me/62895336272308/?text='+text;
+  return false;
 }
 function payment(id){
   var header = "Permisi Admin Saya mau konfirmasi Pesanan dengan kode invoice berikut ini";
@@ -488,7 +488,7 @@ function keyWordToSearch(){
           {
          
             $('#row').css('display','block');
-            $('#row').append('<li><img  alt="Card image" height="150" style="width:100%; padding: 10px;" src="'+baseUrlAdmin+'/uploads/images/'+value.menu_image+'"><a class="link-b" href="#" onclick="detailSearch(\'' + value.menu_id +'-'+ value.menu_name + '\')"> <h6 class="card-text text-center">'+value.menu_name+'</h6></a> </li>')
+            $('#row').append('<li><img  alt="Card image" height="150" style="width:100%; padding: 10px;" src="'+baseUrlAdmin+'/uploads/images/'+value.menu_image+'"><a class="link-b" href="javascript:void(0)" onclick="detailSearch(\'' + value.menu_code + '\')"> <h6 class="card-text text-center">'+value.menu_name+'</h6></a> </li>')
           }
      
         
@@ -506,7 +506,7 @@ function keyWordToSearch(){
 }
 
 function detailSearch(x){
-  window.location.href = baseurl+'/menu/order/'+x.replace(' ','-');
+  window.location.href = baseurl+'/menu/order/'+x;
 
 }
 
