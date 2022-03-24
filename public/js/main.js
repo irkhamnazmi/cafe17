@@ -102,16 +102,14 @@ function whatsapp(id){
   var body = "\n "+id+" \n";
   var footer = "Mohon Segera diproses Terima Kasih.";
   var text = header+body+footer; 
-  window.open = 'https://wa.me/62895336272308/?text='+text;
-  return false;
+  window.open('https://wa.me/62895413850202?text='+text,'name','width= 600,height=400');
 }
 function payment(id){
   var header = "Permisi Admin Saya mau konfirmasi Pesanan dengan kode invoice berikut ini";
   var body = "\n "+id+" \n";
   var footer = "Mohon Segera diproses Terima Kasih.";
   var text = header+body+footer; 
-  window.location.href = 'https://wa.me/6285786625255/?text='+text;
-  console.log(id);
+  window.open('https://wa.me/62895413850202?text='+text,'name','width= 600,height=400');
 }
 
 function paymentOnTransaction(id){
