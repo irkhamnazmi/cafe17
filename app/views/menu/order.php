@@ -83,7 +83,7 @@
                                             <div class="d-flex flex-row align-content-lg-start">
 
                                                 <div class="p-2">
-                                                    <textarea class="form-control" placeholder="Misal: Pedes lvl 3" name="transaction_detail_note"></textarea>
+                                                    <textarea class="form-control" placeholder="" name="transaction_detail_note"></textarea>
 
                                                 </div>
 
